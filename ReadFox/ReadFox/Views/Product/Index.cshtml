@@ -1,0 +1,144 @@
+﻿@model Book
+<link rel="stylesheet" href="~/css/Lobby-Admin.css"/>
+<link rel="stylesheet" href="~/css/Add.css"/>
+<link rel="icon" type="imge/png" href="~/img/Fox_Read1.png">
+    <title>AddBook ReadFox</title>
+ <div class="container-admin">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="">
+                    <span class="icon"> <img src="~/img/Fox_Read1.png" alt=""></span>
+                     <span class="title-ReadFox">ReadFox</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                     <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Product" asp-action="AddBooks">
+                    <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
+                     <span class="title">Add-Book</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                     <span class="title">Costomers</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                     <span class="title">Setting</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Account" asp-action="Logout" >
+                    <span class="icon"><ion-icon name="log-in-outline"  ></ion-icon></span>
+                     <span class="title" >Sing Out</span>
+                </a>
+                
+            </li>
+
+        </ul>
+    </div>
+    <!-- Main -->
+    <div class="main">
+      <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <!-- Search-->
+          <div class="search">
+              <label for="">
+                  <input type="text" placeholder="Search Here">
+                  <ion-icon name="search-outline"></ion-icon>
+              </label>
+          </div>
+          <div class="user">
+              <img src="~/img/Admin.png">
+          </div>
+      </div>
+      <!-- Card-->
+      <div class="cardBox">
+          <div class="card">
+              <div>
+                  <div class="numbers">101</div>
+                  <div class="cardName">Book</div>
+              </div>
+              <div class="iconBx">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+          </div>
+          <div class="card">
+            <div>
+                <div class="numbers">11</div>
+                <div class="cardName">User</div>
+             </div>
+             <div class="iconBx">
+               <ion-icon name="person-outline"></ion-icon>
+              </div>
+            </div>
+            <div class="card">
+               <div>
+                <div class="numbers">0</div>
+                <div class="cardName">Sales</div>
+              </div>
+              <div class="iconBx">
+                <ion-icon name="cart-outline"></ion-icon>
+              </div>
+            </div>
+     </div>
+     
+     <div class="details-add">
+         <!--detail add book-->
+         <div class="recentBook">
+             <div class="cardHeader">
+                 <h2>Add Book</h2>
+             </div>
+             <form  asp-action="AddBooks" >
+              <div class="data"> 
+                <label>Title</label>
+                <input type="text" placeholder="Title..." required>
+            </div>
+             <div class="data">
+                <label >Author</label>
+                <input  type="text" placeholder="Author..." required>
+            </div>
+            <div class="data">
+                <label asp-for="CategoryId" class="control-label" >Category</label>
+                <select asp-for="CategoryId" class="form-control"  id="category" name="category"  style='color:gray' oninput='style.color="black"' asp-items="ViewBag.CategoryLists">  </select>
+            </div>
+            <div class="data">
+                <label >Type story</label>
+                <select asp-for="TypestoryId" id="typestory" name="typelist" form="typestory" style='color:gray' oninput='style.color="black"' asp-items="ViewBag.StoryLists" >
+                 
+                </select>
+            </div>
+            <div class="data">
+                <label >Price</label>
+                <input  type="text"  placeholder="Price..."required>
+            </div>
+            <div class="data-file">
+                <label >Book file</label>
+                <input id="file-input"  type="file"  required>
+            </div>
+                <div class="btn-book">
+                    <div class="inner"></div>
+                    <button type="submit">submit</button>
+                </div>
+                </form>
+         </div>
+     </div>
+    </div>
+ </div>
+
+
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+ <script src="~/js/Dashboard-func.js"></script>
+
