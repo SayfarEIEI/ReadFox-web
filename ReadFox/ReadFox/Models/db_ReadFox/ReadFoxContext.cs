@@ -19,7 +19,6 @@ namespace ReadFox.Models.db_ReadFox
 
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Category> Categorys { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Typestory> Typestorys { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UsersBook> UsersBooks { get; set; }
@@ -72,11 +71,6 @@ namespace ReadFox.Models.db_ReadFox
                     .IsFixedLength(true);
             });
 
-            modelBuilder.Entity<Role>(entity =>
-            {
-                entity.Property(e => e.Name).HasMaxLength(50);
-            });
-
             modelBuilder.Entity<Typestory>(entity =>
             {
                 entity.Property(e => e.TypestoryId).HasColumnName("TypestoryID");
@@ -103,13 +97,6 @@ namespace ReadFox.Models.db_ReadFox
                 entity.Property(e => e.Phone)
                     .HasMaxLength(10)
                     .IsFixedLength(true);
-
-                entity.Property(e => e.RoleId).HasColumnName("RoleID");
-
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.Users)
-                    .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK_Users_Roles");
             });
 
             modelBuilder.Entity<UsersBook>(entity =>

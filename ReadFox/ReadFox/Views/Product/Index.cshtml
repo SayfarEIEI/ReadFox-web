@@ -1,4 +1,4 @@
-﻿@model Book
+﻿@model AddImgeViewModels
 <link rel="stylesheet" href="~/css/Lobby-Admin.css"/>
 <link rel="stylesheet" href="~/css/Add.css"/>
 <link rel="icon" type="imge/png" href="~/img/Fox_Read1.png">
@@ -100,32 +100,32 @@
              <div class="cardHeader">
                  <h2>Add Book</h2>
              </div>
-             <form  asp-action="AddBooks" >
+             <form  asp-action="AddBooks" enctype="multipart/form-data" >
               <div class="data"> 
-                <label>Title</label>
-                <input type="text" placeholder="Title..." required>
+                <label asp-for="ProductName" >Title</label>
+                <input asp-for="ProductName" type="text" placeholder="Title..." required>
             </div>
              <div class="data">
-                <label >Author</label>
-                <input  type="text" placeholder="Author..." required>
+                <label asp-for="Author" >Author</label>
+                <input asp-for="Author"  type="text" placeholder="Author..." required>
             </div>
             <div class="data">
                 <label asp-for="CategoryId" class="control-label" >Category</label>
-                <select asp-for="CategoryId" class="form-control"  id="category" name="category"  style='color:gray' oninput='style.color="black"' asp-items="ViewBag.CategoryLists">  </select>
+                <select asp-for="CategoryId" class="form-control" style='color:gray' oninput='style.color="black"' asp-items="ViewBag.CategoryLists">  </select>
             </div>
             <div class="data">
-                <label >Type story</label>
-                <select asp-for="TypestoryId" id="typestory" name="typelist" form="typestory" style='color:gray' oninput='style.color="black"' asp-items="ViewBag.StoryLists" >
-                 
+                <label asp-for="TypestoryId" >Type story</label>
+                <select asp-for="TypestoryId" id="typestory" style='color:gray' oninput='style.color="black"' asp-items="ViewBag.StoryLists" >
+
                 </select>
             </div>
             <div class="data">
-                <label >Price</label>
-                <input  type="text"  placeholder="Price..."required>
+                <label asp-for="Price" >Price</label>
+                <input asp-for="Price" type="text"  placeholder="Price..."required>
             </div>
             <div class="data-file">
-                <label >Book file</label>
-                <input id="file-input"  type="file"  required>
+                <label asp-for="formFile" >Book file</label>
+                <input asp-for="formFile"  id="file-input"  type="file"  required>
             </div>
                 <div class="btn-book">
                     <div class="inner"></div>
