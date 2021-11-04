@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.FileProviders;
 using ReadFox.Models.db_ReadFox;
+using ReadFox.Models.ViewModels;
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace ReadFox.Controllers
@@ -25,7 +29,7 @@ namespace ReadFox.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddBooks(Book books)
+        public async Task<IActionResult> AddBooks(AddImgeViewModels books )
         {
             if (ModelState.IsValid)
             {
@@ -35,8 +39,19 @@ namespace ReadFox.Controllers
             adBook.Price = books.Price;
             adBook.TypestoryId = books.TypestoryId;
             adBook.Author = books.Author;
-            adBook.ImageName = books.ImageName;
-            _db.Add(adBook);
+                string fileName = Path.GetFileName(books.formFile.FileName);
+                string fileExt = Path.GetExtension(fileName);
+                string tmpName = Guid.NewGuid().ToString();
+                string newFileName = string.Concat(tmpName, fileExt);
+                string filePath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "image")).Root + $@"{newFileName}";
+
+                using (FileStream fs = System.IO.File.Create(filePath))
+                {
+                    books.formFile.CopyTo(fs);
+                    fs.Flush();
+                }
+                adBook.ImageName = newFileName;
+                _db.Add(adBook);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
             }

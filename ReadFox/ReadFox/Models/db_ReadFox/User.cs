@@ -11,8 +11,6 @@ namespace ReadFox.Models.db_ReadFox
         public string Email { get; set; }
         public string PassWord { get; set; }
         public string Phone { get; set; }
-        public int? RoleId { get; set; }
-
-        public virtual Role Role { get; set; }
+        public int? Money { get; set; }
     }
 }

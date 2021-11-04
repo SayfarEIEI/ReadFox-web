@@ -37,8 +37,7 @@ namespace ReadFox.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+      
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
