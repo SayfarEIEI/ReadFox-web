@@ -21,11 +21,15 @@ namespace ReadFox.Controllers
         {
             return View();
         }
+        public IActionResult Add()
+        {
+            return View();
+        }
         public  IActionResult AddBooks()
         {
             ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryId", "CategoryName");
             ViewData["StoryLists"] = new SelectList(_db.Typestorys, "TypestoryId", "TypestoryName");
-            return View("Index");
+            return View("Add");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -53,11 +57,20 @@ namespace ReadFox.Controllers
                 adBook.ImageName = newFileName;
                 _db.Add(adBook);
             await _db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Add");
             }
             ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryID", "CategoryName", books.CategoryId);
             ViewData["StoryLists"] = new SelectList(_db.Typestorys, "TypestoryId", "TypestoryName",books.TypestoryId);
             return View(books);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(string name)
+        {
+            var ps = _db.Books.FindAsync(name);
+            _db.Remove(ps);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
         
     }
