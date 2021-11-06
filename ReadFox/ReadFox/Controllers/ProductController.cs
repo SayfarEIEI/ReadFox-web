@@ -21,7 +21,7 @@ namespace ReadFox.Controllers
         {
             return View();
         }
-        public IActionResult Add()
+        public IActionResult Adds()
         {
             return View();
         }
@@ -29,7 +29,7 @@ namespace ReadFox.Controllers
         {
             ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryId", "CategoryName");
             ViewData["StoryLists"] = new SelectList(_db.Typestorys, "TypestoryId", "TypestoryName");
-            return View("Add");
+            return View("Adds");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -57,7 +57,7 @@ namespace ReadFox.Controllers
                 adBook.ImageName = newFileName;
                 _db.Add(adBook);
             await _db.SaveChangesAsync();
-            return RedirectToAction("Add");
+            return RedirectToAction("Adds");
             }
             ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryID", "CategoryName", books.CategoryId);
             ViewData["StoryLists"] = new SelectList(_db.Typestorys, "TypestoryId", "TypestoryName",books.TypestoryId);
