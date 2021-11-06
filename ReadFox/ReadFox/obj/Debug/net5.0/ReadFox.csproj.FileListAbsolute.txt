@@ -264,3 +264,4 @@ C:\Users\Sayfar\OneDrive\เดสก์ท็อป\Readfox\ReadFox-web\ReadFox
 C:\Users\Sayfar\OneDrive\เดสก์ท็อป\Readfox\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\ref\ReadFox.dll
 C:\Users\Sayfar\OneDrive\เดสก์ท็อป\Readfox\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\ReadFox.pdb
 C:\Users\Sayfar\OneDrive\เดสก์ท็อป\Readfox\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\ReadFox.genruntimeconfig.cache
+C:\Users\Sayfar\OneDrive\เดสก์ท็อป\Readfox\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\Razor\Views\Product\Adds.cshtml.g.cs
