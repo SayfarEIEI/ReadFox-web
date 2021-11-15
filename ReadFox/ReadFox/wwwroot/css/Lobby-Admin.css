@@ -390,6 +390,49 @@ padding: 10px;
 .recentCostumers table tr:hover td h4 span{
     color: var(--white);
 }
+.delete_btn {
+    padding: 2px 4px;
+    background: var(--orenge);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.edit_btn {
+    padding: 2px 4px;
+    background: orange;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+/*---- Scrollbar ----*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c52b32;
+    border-radius: 10px;
+}
+    ::-webkit-scrollbar-thumb:hover {
+        background: #c52b32;
+    }
 
 
 /*---- Reponsive ----*/
