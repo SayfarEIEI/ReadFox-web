@@ -5841,20 +5841,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sayfar\\.nuget\\packages\\": {}
+    "C:\\Users\\Kai\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sayfar\\OneDrive\\เดสก์ท็อป\\Readfox\\ReadFox-web\\ReadFox\\ReadFox\\ReadFox.csproj",
+      "projectUniqueName": "C:\\Users\\Kai\\OneDrive\\เอกสาร\\G\\ReadFox-web\\ReadFox\\ReadFox\\ReadFox.csproj",
       "projectName": "ReadFox",
-      "projectPath": "C:\\Users\\Sayfar\\OneDrive\\เดสก์ท็อป\\Readfox\\ReadFox-web\\ReadFox\\ReadFox\\ReadFox.csproj",
-      "packagesPath": "C:\\Users\\Sayfar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sayfar\\OneDrive\\เดสก์ท็อป\\Readfox\\ReadFox-web\\ReadFox\\ReadFox\\obj\\",
+      "projectPath": "C:\\Users\\Kai\\OneDrive\\เอกสาร\\G\\ReadFox-web\\ReadFox\\ReadFox\\ReadFox.csproj",
+      "packagesPath": "C:\\Users\\Kai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kai\\OneDrive\\เอกสาร\\G\\ReadFox-web\\ReadFox\\ReadFox\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Sayfar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Kai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5914,6 +5922,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.11, 5.0.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

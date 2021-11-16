@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a asp-area="" asp-controller="Product" asp-action="AddBooks">
+                <a asp-area="" asp-controller="Product" asp-action="Index">
                     <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
                      <span class="title">Add-Book</span>
                 </a>
@@ -110,6 +110,7 @@
                          <td>Publisher</td>
                          <td>Date</td>
                          <td>Price</td>
+                         <td>Edit/Delete</td>
                      </tr>
                  </thead>
                  <tbody>
@@ -117,40 +118,207 @@
                         <td>เกิดใหม่เป็นตัวร้าย</td>
                         <td>Publisher</td>
                         <td>1/1/2022</td>
-                        <td><span class="price cheap">59</span></td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn" onclick="Mydelete()">Remove</button></td>
                      </tr>
                      <tr>
                         <td>เกิดใหม่เป็นตัวร้าย</td>
                         <td>Publisher</td>
                         <td>1/1/2022</td>
-                        <td><span class="price cheap">59</span></td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
                      </tr>
                      <tr>
                         <td>เกิดใหม่เป็นตัวร้าย</td>
                         <td>Publisher</td>
                         <td>1/1/2022</td>
-                        <td><span class="price 
-                            expensive">129</span></td>
+                        <td><span>129</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
                      </tr>
                      <tr>
                         <td>เกิดใหม่เป็นตัวร้าย</td>
                         <td>Publisher</td>
                         <td>1/1/2022</td>
-                        <td><span class="price normal">79</span></td>
+                        <td><span>79</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
                      </tr>
                      <tr>
                         <td>เกิดใหม่เป็นตัวร้าย</td>
                         <td>Publisher</td>
                         <td>1/1/2022</td>
-                        <td><span class="price 
-                            expensive">109</span></td>
+                        <td><span  >109</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
                      </tr>
                      <tr>
                         <td>เกิดใหม่เป็นตัวร้าย</td>
                         <td>Publisher</td>
                         <td>1/1/2022</td>
-                        <td><span class="price cheap">59</span></td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
                      </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                        <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn" >Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+                     <tr>
+                        <td>เกิดใหม่เป็นตัวร้าย</td>
+                        <td>Publisher</td>
+                        <td>1/1/2022</td>
+                        <td><span>59</span></td>
+                        <td><button type="button" class="edit_btn">Edit</button>  /  <button type="button" class="delete_btn">Remove</button></td>
+                     </tr>
+
+                     </tr>
+
                  </tbody>
              </table>
          </div>
@@ -195,14 +363,19 @@
  </div>
 
 
+
  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
  <script src="~/js/Dashboard-func.js"></script>
-
+ <script>
+   function Mydelete() {
+     confirm("Do you want to delete the book?!");
+        }
+</script>
 
 }
  </body>
-</html>
+
 
    
   

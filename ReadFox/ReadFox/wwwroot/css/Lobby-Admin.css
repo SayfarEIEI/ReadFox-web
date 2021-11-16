@@ -254,16 +254,16 @@ color: var(--white);
     gap: 30px;
     margin-top: 10px;
 }
-.details .recentBook{
-    position: relative;
-    display: grid;
-    min-height: 500px;
-    background: var(--white);
-    padding: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0,0.3);
-    border-radius: 20px;
-    border: 0.5px solid var(--black2) ;
-}
+    .details .recentBook {
+        position: relative;
+        display: grid;
+        width: 100%;
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0,0.3);
+        border-radius: 20px;
+        border: 0.5px solid var(--black2);
+    }
 .cardHeader{
     display:flex;
     justify-content: space-between;
@@ -390,6 +390,49 @@ padding: 10px;
 .recentCostumers table tr:hover td h4 span{
     color: var(--white);
 }
+.delete_btn {
+    padding: 2px 4px;
+    background: var(--orenge);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.edit_btn {
+    padding: 2px 4px;
+    background: orange;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+/*---- Scrollbar ----*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c52b32;
+    border-radius: 10px;
+}
+    ::-webkit-scrollbar-thumb:hover {
+        background: #c52b32;
+    }
 
 
 /*---- Reponsive ----*/
