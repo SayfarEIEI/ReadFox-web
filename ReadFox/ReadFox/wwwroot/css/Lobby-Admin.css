@@ -254,16 +254,16 @@ color: var(--white);
     gap: 30px;
     margin-top: 10px;
 }
-.details .recentBook{
-    position: relative;
-    display: grid;
-    min-height: 500px;
-    background: var(--white);
-    padding: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0,0.3);
-    border-radius: 20px;
-    border: 0.5px solid var(--black2) ;
-}
+    .details .recentBook {
+        position: relative;
+        display: grid;
+        width: 100%;
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0,0.3);
+        border-radius: 20px;
+        border: 0.5px solid var(--black2);
+    }
 .cardHeader{
     display:flex;
     justify-content: space-between;
