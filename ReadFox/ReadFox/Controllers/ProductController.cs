@@ -23,6 +23,7 @@ namespace ReadFox.Controllers
         }
         public IActionResult Adds()
         {
+            AddBooks();
             return View();
         }
         public  IActionResult AddBooks()
