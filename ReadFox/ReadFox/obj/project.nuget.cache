@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Gf/y85QYh0ZNyqVhGtBZnJI6eSclEWsgmsvq9LWR4nTBLkNrmv9KALMx3uMbxJIlqpYljVbRqE2Ts1hU6xikOQ==",
+  "dgSpecHash": "bBlc9mkf8dERRe7PFRuKOsZ85wvkL35qud5sILmmKHW6msExviW63mvVUMBMIMWd5JNStI7NfNNz1cZkwLCzWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kai\\OneDrive\\เอกสาร\\G\\ReadFox-web\\ReadFox\\ReadFox\\ReadFox.csproj",
   "expectedPackageFiles": [
@@ -102,7 +102,7 @@
     "C:\\Users\\Kai\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Kai\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Kai\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Kai\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.11\\microsoft.netcore.app.host.win-x64.5.0.11.nupkg.sha512"
+    "C:\\Users\\Kai\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }
