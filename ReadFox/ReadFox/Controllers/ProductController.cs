@@ -6,6 +6,8 @@ using ReadFox.Models.ViewModels;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ReadFox.Controllers
 {
@@ -17,10 +19,7 @@ namespace ReadFox.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+   
         public IActionResult Adds()
         {
             AddBooks();

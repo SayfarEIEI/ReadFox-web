@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ProductViewModels>
     <link rel="stylesheet" href="~/css/Lobby-Admin.css">
     <link rel="icon" type="imge/png" href="~/img/Fox_Read1.png">
     <title>Admin ReadFox</title>
@@ -69,7 +69,12 @@
       <div class="cardBox">
           <div class="card">
               <div>
-                  <div class="numbers">101</div>
+                            <div class="numbers">@foreach(var item in Model)
+                                {
+                                    int count = 0;
+                                    count += 1;
+                                }
+                            </div>
                   <div class="cardName">Book</div>
               </div>
               <div class="iconBx">
@@ -106,51 +111,24 @@
              <table>
                  <thead>
                      <tr>
-                         <td>Name</td>
-                         <td>Publisher</td>
-                         <td>Date</td>
-                         <td>Price</td>
+                         <td>ชื่อเรื่อง</td>
+                         <td>ผู้แต่ง</td>
+                         <td>ประเภท</td>
+                         <td>ปรเภทเนื้อเรื่อง</td>
+                         <td>ราคา</td>
                      </tr>
                  </thead>
                  <tbody>
-                     <tr>
-                        <td>เกิดใหม่เป็นตัวร้าย</td>
-                        <td>Publisher</td>
-                        <td>1/1/2022</td>
-                        <td><span class="price cheap">59</span></td>
-                     </tr>
-                     <tr>
-                        <td>เกิดใหม่เป็นตัวร้าย</td>
-                        <td>Publisher</td>
-                        <td>1/1/2022</td>
-                        <td><span class="price cheap">59</span></td>
-                     </tr>
-                     <tr>
-                        <td>เกิดใหม่เป็นตัวร้าย</td>
-                        <td>Publisher</td>
-                        <td>1/1/2022</td>
-                        <td><span class="price 
-                            expensive">129</span></td>
-                     </tr>
-                     <tr>
-                        <td>เกิดใหม่เป็นตัวร้าย</td>
-                        <td>Publisher</td>
-                        <td>1/1/2022</td>
-                        <td><span class="price normal">79</span></td>
-                     </tr>
-                     <tr>
-                        <td>เกิดใหม่เป็นตัวร้าย</td>
-                        <td>Publisher</td>
-                        <td>1/1/2022</td>
-                        <td><span class="price 
-                            expensive">109</span></td>
-                     </tr>
-                     <tr>
-                        <td>เกิดใหม่เป็นตัวร้าย</td>
-                        <td>Publisher</td>
-                        <td>1/1/2022</td>
-                        <td><span class="price cheap">59</span></td>
-                     </tr>
+                    @foreach(var item in Model)
+                       {
+                          <tr>
+                              <td>@item.ProductName</td>
+                              <td>@item.Author</td>
+                              <td>@item.CategoryName</td>
+                              <td>@item.TypestoryName</td>
+                              <td>@item.Price</td>
+                          </tr>
+                       }
                  </tbody>
              </table>
          </div>
