@@ -340,3 +340,4 @@ C:\Users\Kai\OneDrive\เอกสาร\G\ReadFox-web\ReadFox\ReadFox\obj\Debug
 C:\Users\Kai\OneDrive\เอกสาร\G\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\ReadFox.pdb
 C:\Users\Kai\OneDrive\เอกสาร\G\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\ReadFox.genruntimeconfig.cache
 C:\Users\Kai\OneDrive\เอกสาร\G\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\Razor\Views\Costomers\Index.cshtml.g.cs
+C:\Users\Sayfar\OneDrive\เดสก์ท็อป\Readfox\ReadFox-web\ReadFox\ReadFox\obj\Debug\net5.0\Razor\Views\Costomers\Index.cshtml.g.cs

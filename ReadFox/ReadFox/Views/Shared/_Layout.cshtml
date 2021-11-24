@@ -11,11 +11,57 @@
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
-   
+  <div class="container-admin">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="">
+                    <span class="icon"> <img src="~/img/Fox_Read1.png" alt=""></span>
+                     <span class="title-ReadFox">ReadFox</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                     <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Product" asp-action="AddBooks">
+                    <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
+                     <span class="title">Add-Book</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                     <span class="title">Costomers</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                     <span class="title">Setting</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Account" asp-action="Logout" >
+                    <span class="icon"><ion-icon name="log-in-outline"  ></ion-icon></span>
+                     <span class="title" >Sing Out</span>
+                </a>
+                
+            </li>
+
+        </ul>
+    </div>
        
+     <div class="container">
+        <main role="main" class="pb-3">
             @RenderBody()
+        </main>
+    </div>
       
- 
+ </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
