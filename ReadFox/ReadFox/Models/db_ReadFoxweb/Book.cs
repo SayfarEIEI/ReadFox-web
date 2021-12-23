@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ReadFox.Models.db_ReadFox
+namespace ReadFox.Models.db_ReadFoxweb
 {
     public partial class Book
     {
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public string Author { get; set; }
         public int? TypestoryId { get; set; }
@@ -15,6 +16,6 @@ namespace ReadFox.Models.db_ReadFox
         public int? CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual Typestory Typestory { get; set; }
+        public virtual Tyrestory Typestory { get; set; }
     }
 }

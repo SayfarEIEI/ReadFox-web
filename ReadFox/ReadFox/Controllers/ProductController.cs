@@ -1,34 +1,34 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.FileProviders;
-using ReadFox.Models.db_ReadFox;
+using ReadFox.Models.db_ReadFoxweb;
 using ReadFox.Models.ViewModels;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ReadFox.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ReadFoxContext _db;
+        private readonly ReadFoxwebContext  _db;
 
-        public ProductController(ReadFoxContext db)
+        public ProductController(ReadFoxwebContext db)
         {
             _db = db;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+   
         public IActionResult Adds()
         {
+            AddBooks();
             return View();
         }
         public  IActionResult AddBooks()
         {
             ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryId", "CategoryName");
-            ViewData["StoryLists"] = new SelectList(_db.Typestorys, "TypestoryId", "TypestoryName");
+            ViewData["StoryLists"] = new SelectList(_db.Tyrestorys, "TypestoryId", "TypestoryName");
             return View("Adds");
         }
         [HttpPost]
@@ -60,18 +60,93 @@ namespace ReadFox.Controllers
             return RedirectToAction("Adds");
             }
             ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryID", "CategoryName", books.CategoryId);
-            ViewData["StoryLists"] = new SelectList(_db.Typestorys, "TypestoryId", "TypestoryName",books.TypestoryId);
+            ViewData["StoryLists"] = new SelectList(_db.Tyrestorys, "TypestoryId", "TypestoryName",books.TypestoryId);
             return View(books);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(string name)
+        public async Task<IActionResult> Delete(int id)
         {
-            var ps = _db.Books.FindAsync(name);
+            var ps = await _db.Books.FindAsync(id);
             _db.Remove(ps);
             await _db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
+        }
+        public async Task<IActionResult> Detail(string name)
+        {
+            var pds = await (from p in _db.Books
+                             from c in _db.Categorys
+                             from t in _db.Tyrestorys
+                             where (p.CategoryId == c.CategoryId) && (p.TypestoryId == t.TypestoryId) && (p.ProductName == name)
+                             select new ProductViewModels
+                             {
+                                 ProductName = p.ProductName,
+                                 Author = p.Author,
+                                 CategoryName = c.CategoryName,
+                                 TypestoryName = t.TypestoryName,
+                                 Price = p.Price,
+                                 ImageName = p.ImageName,
+                                 Id = p.Id,
+                             }).FirstOrDefaultAsync();
+            if (pds == null) { return NotFound(); }
+            return View(pds);
         }
         
+        public async  Task<IActionResult> Edit(int id)
+        {
+            var pds = await (from p in _db.Books
+                             from c in _db.Categorys
+                             from t in _db.Tyrestorys
+                             where (p.CategoryId == c.CategoryId) && (p.TypestoryId == t.TypestoryId) && (p.Id == id)
+                             select new ProductEditViewModels
+                             {
+                                 ProductName = p.ProductName,
+                                 Author = p.Author,
+                                 CategoryId = c.CategoryId,
+                                 TypestoryId = t.TypestoryId,
+                                 Price = p.Price,
+                                 Id = p.Id,
+                             }).FirstOrDefaultAsync();
+            if (pds == null) { return NotFound(); }
+            ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryId", "CategoryName", pds.CategoryId);
+            ViewData["StoryLists"] = new SelectList(_db.Tyrestorys, "TypestoryId", "TypestoryName", pds.TypestoryId);
+            return View(pds);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id ,ProductEditViewModels data)
+        {
+            if (id != data.Id) { return NotFound(); }
+           
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var ps = await (from p in _db.Books
+                                    where (p.Id == id)
+                                    select p).FirstOrDefaultAsync();
+                    ps.ProductName = data.ProductName;
+                    ps.Author = data.Author;
+                    ps.CategoryId = data.CategoryId;
+                    ps.TypestoryId = data.TypestoryId;
+                    ps.Price = data.Price;
+
+                    _db.Update(ps);
+                 await _db.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    bool result = _db.Books.Any(p=>p.Id==id);
+                    if (result == false)
+                    {
+                        return NotFound();
+                    }
+                }
+                return RedirectToAction("Index","Home");
+            }
+            ViewData["CategoryLists"] = new SelectList(_db.Categorys, "CategoryId", "CategoryName", data.CategoryId);
+            ViewData["StoryLists"] = new SelectList(_db.Tyrestorys, "TypestoryId", "TypestoryName", data.TypestoryId);
+            return View(data);
+        }
     }
 }

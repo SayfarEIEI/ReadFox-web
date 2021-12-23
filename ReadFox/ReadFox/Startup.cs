@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using ReadFox.Models.db_ReadFox;
+using ReadFox.Models.db_ReadFoxweb;
 using ReadFox.Service.PasswordService;
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace ReadFox
         public void ConfigureServices(IServiceCollection services)
         {
             var strConn = Configuration.GetConnectionString("ReadFox");
-            services.AddDbContext<ReadFoxContext>(optiom=>optiom.UseSqlServer(strConn));
+            services.AddDbContext<ReadFoxwebContext>(optiom=>optiom.UseSqlServer(strConn));
             services.Configure<CookiePolicyOptions>(option =>
             {
                 option.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;

@@ -22,7 +22,7 @@
   }
   .navigation{
       position: fixed;
-      width: 300px;
+      width: 80px;
       height: 100%;
       background:var(--orenge);
       border-left: 10px solid var(--orenge);
@@ -30,7 +30,7 @@
       overflow: hidden;
   }
   .navigation.active{
-      width: 80px;
+      width: 300px;
   }
   .navigation ul{
       position: absolute;
@@ -135,15 +135,15 @@
  /* main */
  .main{
      position: absolute;
-     width:  calc(100% - 300px);
-     left: 300px;
+     width:  calc(100% - 80px);
+     left: 80px;
      min-height: 100vh;
      background: var(--white);
      transition: 0.5s;
  }
  .main.active{
-    width:  calc(100% - 80px);
-    left: 80px;
+    width:  calc(100% - 300px);
+    left: 300px;
  }
  .topbar{
      width: 100%;
@@ -250,7 +250,7 @@ color: var(--white);
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 5fr 1fr;
     gap: 30px;
     margin-top: 10px;
 }
@@ -390,6 +390,28 @@ padding: 10px;
 .recentCostumers table tr:hover td h4 span{
     color: var(--white);
 }
+.delete_btn {
+    padding: 2px 4px;
+    background: var(--orenge);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.edit_btn {
+    padding: 2px 4px;
+    background: orange;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 
 
 /*---- Reponsive ----*/

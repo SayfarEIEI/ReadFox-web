@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ReadFox.Models;
+using ReadFox.Models.db_ReadFoxweb;
+using ReadFox.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,14 +16,32 @@ namespace ReadFox.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        public HomeController()
+        private readonly ReadFoxwebContext _db;
+        public HomeController(ReadFoxwebContext db)
         {
-            
+            _db = db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var detail = from b in _db.Books
+                         from c in _db.Categorys
+                         from t in _db.Tyrestorys
+                         where (b.CategoryId == c.CategoryId) && (b.TypestoryId == t.TypestoryId)
+                         select new ProductViewModels
+                         {
+                             ProductName = b.ProductName,
+                             Author = b.Author,
+                             CategoryName = c.CategoryName,
+                             TypestoryName = t.TypestoryName,
+                             Price = b.Price,
+                             Id = b.Id,
+                         };
+            if (detail == null)
+            {
+                return NotFound();
+            }
+            return View(await detail.ToListAsync());
         }
 
         public IActionResult Login()
