@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ReadFox.Models;
-using ReadFox.Models.db_ReadFox;
+using ReadFox.Models.db_ReadFoxweb;
 using ReadFox.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,8 +16,8 @@ namespace ReadFox.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly ReadFoxContext _db;
-        public HomeController(ReadFoxContext db)
+        private readonly ReadFoxwebContext _db;
+        public HomeController(ReadFoxwebContext db)
         {
             _db = db;
         }
@@ -26,7 +26,7 @@ namespace ReadFox.Controllers
         {
             var detail = from b in _db.Books
                          from c in _db.Categorys
-                         from t in _db.Typestorys
+                         from t in _db.Tyrestorys
                          where (b.CategoryId == c.CategoryId) && (b.TypestoryId == t.TypestoryId)
                          select new ProductViewModels
                          {
@@ -35,6 +35,7 @@ namespace ReadFox.Controllers
                              CategoryName = c.CategoryName,
                              TypestoryName = t.TypestoryName,
                              Price = b.Price,
+                             Id = b.Id,
                          };
             if (detail == null)
             {

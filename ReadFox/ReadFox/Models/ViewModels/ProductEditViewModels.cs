@@ -1,14 +1,13 @@
 ﻿namespace ReadFox.Models.ViewModels
 {
-    public class ProductViewModels
+    public class ProductEditViewModels
     {
         public string ProductName { get; set; }
         public string Author { get; set; }
+        public int CategoryId { get; set; }
+        public int TypestoryId { get; set; }
         public int? Price { get; set; }
-        public string ImageName { get; set; }
-        public string TypestoryName { get; set; }
-        public string CategoryName { get; set; }
+       
         public int Id { get; set; }
-      
     }
 }

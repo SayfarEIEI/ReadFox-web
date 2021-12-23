@@ -1,4 +1,4 @@
-﻿using ReadFox.Models.db_ReadFox;
+﻿using ReadFox.Models.db_ReadFoxweb;
 using Microsoft.AspNetCore.Http;
 
 namespace ReadFox.Models.ViewModels
@@ -13,7 +13,7 @@ namespace ReadFox.Models.ViewModels
         public int? CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual Typestory Typestory { get; set; }
+        public virtual Tyrestory Typestory { get; set; }
 
     }
 }

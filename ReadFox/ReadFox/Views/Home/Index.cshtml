@@ -75,12 +75,16 @@
                     @foreach(var item in Model)
                        {
                           <tr>
-                              <td>@item.ProductName</td>
+                              <td><a asp-controller="Product" asp-action="Detail"asp-route-name = "@item.ProductName" >@item.ProductName</a> </td>
                               <td>@item.Author</td>
                               <td>@item.CategoryName</td>
                               <td>@item.TypestoryName</td>
                               <td>@item.Price</td>
-                              <td><button type="button" class="edit_btn">แก้ไข</button>  /  <button type="button" class="delete_btn">ลบ</button></td>
+                              <td><a asp-controller="Product" asp-action="Edit" asp-route-id ="@item.Id" class="edit_btn">แก้ไข</a>  /<form asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id" > 
+                                  <button  type="submit"  class="delete_btn" onclick="return confirm('คุณต้องการทำการลบหนังสือเล่นนี้ : @item.ProductName ใช่หรือไม่')" >
+                                      ลบ
+                                      </button>
+                                  </form></td> 
                           </tr>
                        }
                  </tbody>
