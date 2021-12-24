@@ -51,15 +51,15 @@
             </div>
      </div>
      
-     <div class="details">
+     <div class="detailsD">
          <!--detail list book-->
-         <div class="recentBook">
-                ชื่อหนังสือ : @Model.ProductName<br />
-         <img src="~/image/@Model.ImageName" />
-          ผู้แต่ง : @Model.Author<br />
-         ประเภทหนัง : @Model.CategoryName<br />
-         ประเภทเนื้อเรื่อง : @Model.TypestoryName<br />
-         ราคา : @Model.Price<br />
+         <div class="recentBookD">
+                <div class=BooknameD> ชื่อหนังสือ : @Model.ProductName</div>
+         <img class=imgD src="~/image/@Model.ImageName" />
+         <div class=BookauthorD> ผู้แต่ง : @Model.Author</div>
+         <div  class=BookcatagoryD> ประเภทหนัง : @Model.CategoryName</div>
+          <div class=BooktypeD>ประเภทเนื้อเรื่อง : @Model.TypestoryName</div>
+         <div class=BookpriceD> ราคา : @Model.Price</div>
             
          </div>
      </div>
