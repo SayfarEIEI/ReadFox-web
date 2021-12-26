@@ -11,10 +11,14 @@
           </div>
           <!-- Search-->
           <div class="search">
-              <label for="">
-                  <input type="text" placeholder="Search Here">
+              <form asp-controller = "Home" asp-action="Search" >
+                     <label for="">
+                  <input type="text" name="textProductName" placeholder="Search Here" >
                   <ion-icon name="search-outline"></ion-icon>
+                
               </label>
+              </form>
+
           </div>
           <div class="user">
               <img src="~/img/Admin.png">

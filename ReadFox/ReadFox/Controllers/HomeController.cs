@@ -44,6 +44,52 @@ namespace ReadFox.Controllers
             return View(await detail.ToListAsync());
         }
 
+        public async Task<IActionResult> Search(string textProductName)
+        {
+            if (string.IsNullOrEmpty(textProductName))
+            {
+                var detail = from b in _db.Books
+                             from c in _db.Categorys
+                             from t in _db.Tyrestorys
+                             where (b.CategoryId == c.CategoryId) && (b.TypestoryId == t.TypestoryId)
+                             select new ProductViewModels
+                             {
+                                 ProductName = b.ProductName,
+                                 Author = b.Author,
+                                 CategoryName = c.CategoryName,
+                                 TypestoryName = t.TypestoryName,
+                                 Price = b.Price,
+                                 Id = b.Id,
+                             };
+                if (detail == null)
+                {
+                    return NotFound();
+                }
+                return View("Index", await detail.ToListAsync());
+            }
+            else
+            {
+                var detail = from b in _db.Books
+                             from c in _db.Categorys
+                             from t in _db.Tyrestorys
+                             where (b.CategoryId == c.CategoryId) && (b.TypestoryId == t.TypestoryId) && (b.ProductName.Contains(textProductName))
+                             select new ProductViewModels
+                             {
+                                 ProductName = b.ProductName,
+                                 Author = b.Author,
+                                 CategoryName = c.CategoryName,
+                                 TypestoryName = t.TypestoryName,
+                                 Price = b.Price,
+                                 Id = b.Id,
+                             };
+                if (detail == null)
+                {
+                    return NotFound();
+                }
+                return View("Index", await detail.ToListAsync());
+            }
+        }
+
         public IActionResult Login()
         {
             return View();
